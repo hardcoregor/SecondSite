@@ -236,6 +236,17 @@ hr {
   background-color: #f8f8f8;
 }
 
+.section--clients {
+  background: url("../images/bgclients.png") center no-repeat;
+  background-size: cover;
+}
+
+.section--map {
+  background: url("../images/mapbg.png") center no-repeat;
+  background-size: cover;
+  padding: 57px 0;
+}
+
 .section__header {
   width: 100%;
   max-width: 950px;
@@ -271,43 +282,47 @@ hr {
   color: #999;
 }
 
-/* About */
+/* Card */
 
-.about {
+.card {
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
 }
 
-.about__item {
-  position: relative;
+.card__item {
   width: 380px;
+
+}
+
+.card__inner {
+  position: relative;
   background-color: #95e1d3;
 }
 
-.about__item:hover .about__image {
+.card__inner:hover .card__image {
   transform: translate3d(-10px, -10px, 0);
 }
 
-.about__item:hover .about__image img {
+.card__inner:hover .card__image img {
   opacity: 0.1;
 }
 
-.about__item:hover .about__text {
+.card__inner:hover .card__text {
   opacity: 1;
 }
 
-.about__image {
+.card__image {
   background: linear-gradient(to bottom, #f38181, #fce38a);
   transition: transform 0.2s linear;
 }
 
-.about__image img {
+.card__image img {
   display: block;
   transition: opacity .2s linear;
 }
 
-.about__text {
+.card__text {
   width: 100%; /*Если позишн абсолют нужно указывать ширину блока*/
   position: absolute;
   opacity: 0; /*Скрываем елемент и задаем условия отображения*/
@@ -322,6 +337,25 @@ hr {
   transform: translate3d(0, -50%, 0);
 
   transition: opacity .2s linear;
+}
+
+.card__info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card__name {
+  margin: 5px;
+  text-transform: uppercase;
+  font-style: 14px;
+  color: #333;
+}
+
+.card__prof {
+  color: #999;
+  font-style: 15px;
+  font-style: italic;
+  font-weight: 300;
 }
 
 /* Statistics */
@@ -504,12 +538,11 @@ hr {
 }
 
 .reviews__item {
-  padding-left: 205px;
+  padding-left: 275px;
   position: relative;
 }
 
 .reviews__image {
-  border: 3px solid #95e1d3;
   padding: 10px;
   position: absolute;
   top: 0;
@@ -571,4 +604,325 @@ background-color: #f38181;
 .reviews__btn--next {
   right: 0;
   transform: rotate(135deg);
+}
+
+/* Social */
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social__item {
+  width: 55px;
+  height: 55px;
+  background-color: #fce38a;
+  border-right: 1px solid #f38181;
+  padding: 12px 10px;
+  line-height: 1;
+
+  font-size: 30px;
+  text-decoration: none;
+  color: #f38181;
+
+  transition: background-color .2s linear, color .2s linear;
+}
+
+.social__item:last-child {
+  border-right: 0;
+}
+
+.social__item:hover {
+  background-color: #f38181;
+  color: #fff;
+}
+
+/* Logo */
+
+.logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Works */
+
+.works {
+  display: flex;
+}
+
+.works__column {
+  flex: 1 1 0; /* Сделали коллонки одинакового размера */
+}
+
+.works__item {
+  position: relative;
+
+  background: linear-gradient(to bottom, #f38181, #fce38a);
+}
+
+.works__item:hover .works__img {
+  opacity: 0.1;
+}
+
+.works__item:hover .works__info {
+  opacity: 1;
+}
+
+.works__img {
+  max-width: 100%; /*Благодаря этому делаем адаптивным размер.*/
+  height: auto; /*Благодаря этому делаем адаптивным размер.*/
+  display: block;
+  transition: opacity 0.2s linear;
+}
+
+.works__info {
+  width: 100%;
+  padding: 0 15px;
+
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+
+  transform: translate3d(0, -50%, 0);
+  transition: opacity 0.2s linear;
+}
+
+.works__titile {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.works__text {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+/* Clients */
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+
+.clients__item {
+  width: 50%;
+  padding: 0 45px 0 175px;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.clients__img {
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%; /* Для того чтобы грузить квадратные фотографии и они округлялись автоматом*/
+  position: absolute;
+  top: 0;
+  left: 40px;
+  z-index: 1;
+}
+
+.clients__name {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.clients__prof {
+  color: #333;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.clients__text {
+  font-size: 15px;
+  color: #999;
+}
+
+.clients__text::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;  
+
+  margin: 15px 0;
+
+  z-index: 1;
+  background-color: #f38181;
+}
+
+
+/* Blog */
+
+.blog {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog__item {
+  width: 32%;
+}
+
+.blog__header {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.blog__photo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.blog__date {
+  padding: 10px 20px;
+
+  position: absolute;
+  left: -10px;
+  bottom: 10px;
+  z-index: 1;
+
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+
+  color: #fff;
+  background-color: #95e1d3;
+}
+
+.blog__date-day {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+}
+
+.blog__content {
+  margin-bottom: 14px;
+}
+
+.blog__title {
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+.blog__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog__title a:hover {
+  text-decoration: underline;
+}
+
+.blog__text {
+  font-size: 15px;
+  color: #999;
+
+}
+
+.blog__footer {
+  padding-top: 14px;
+  border-top: 1px solid #e5e5e5;
+
+  color: #999;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.blog-stat {
+
+}
+
+.blog-stat__item {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.blog-stat__item i {
+  color: #95e1d3;
+}
+
+
+/* Map */
+
+.map {
+  text-align: center;
+}
+
+.map__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f38181;
+  text-transform: uppercase;
+}
+
+.map__title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 15px auto 0; /* Этим выровнял ее по центру отступ сверху 30*/
+  
+  background-color: #f38181;
+}
+
+.map__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.map__title a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 65px;
+  background-color: #f8f8f8;
+}
+
+.footer__logo {
+  font-size: 46px;
+  font-weight: 700;
+  color: #ccc;
+
+  margin-bottom: 30px;
+}
+
+.footer__text {
+  font-size: 15px;
+  color: #999;
+
+  margin-bottom: 40px;
+}
+
+.footer__socials-header {
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.footer__socials-header b {
+  font-size: 18px;
 }
